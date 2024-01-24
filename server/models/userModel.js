@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 
 // Declare the Schema of the Mongo model
 var userSchema = new mongoose.Schema({
-    name:{
+    firstName:{
         type:String,
         required:true,
-        unique:true,
-        index:true,
+    },
+    lastName:{
+        type:String,
+        required:true,
     },
     email:{
         type:String,
