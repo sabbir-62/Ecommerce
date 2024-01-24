@@ -10,21 +10,19 @@ require('dotenv').config();
 
 // create express instant
 const app = express();
+app.use(express.json())
 
 
 // route
-app.use("/", (req, res) => {
-    res.send("this is our server")
-})
 app.use("/api/v1", authRoute);
-
-// database connection
-connection();
 
 
 // port number import from dotenv
 const PORT = process.env.PORT || 8080;
 
+
+// database connection
+connection();
 
 // server listening
 app.listen(PORT, () => {
