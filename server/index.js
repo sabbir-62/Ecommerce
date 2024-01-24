@@ -1,6 +1,7 @@
 // import npm packages
 const express = require('express');
 const connection = require("./config/dbConnect")
+const authRoute = require("./routes/authRoute");
 
 
 // configure dotenv
@@ -15,7 +16,7 @@ const app = express();
 app.use("/", (req, res) => {
     res.send("this is our server")
 })
-
+app.use("/api/v1", authRoute);
 
 // database connection
 connection();
